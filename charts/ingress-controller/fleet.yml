@@ -1,7 +1,8 @@
 namespace: servas-app
 helm:
   releaseName: traefik
-  chart: oci://ghcr.io/traefik/helm/traefik:35.2.0.tgz
+  chart: traefik
+  repo: oci://ghcr.io/traefik/helm/traefik
 targetCustomizations: 
   - name: hasIngressController
     doNotDeploy: true

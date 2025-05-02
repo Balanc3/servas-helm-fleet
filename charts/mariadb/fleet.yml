@@ -1,6 +1,7 @@
 namespace: servas-app
 helm:
   releaseName: servas-maria-db
-  chart: oci://registry-1.docker.io/bitnamicharts/mariadb-20.5.3.tgz
+  chart: mariadb
+  repo: oci://registry-1.docker.io/bitnamicharts/mariadb
 dependsOn:
   - name: servas-secrets
