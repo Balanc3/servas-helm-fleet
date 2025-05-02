@@ -6,5 +6,4 @@ targetCustomizations:
   - name: hasIngressController
     doNotDeploy: true
     clusterSelector: 
-      matchLabels: 
-        name: local
+      clusterName: local
