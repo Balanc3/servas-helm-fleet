@@ -1,0 +1,10 @@
+
+kind: GitRepo
+apiVersion: fleet.cattle.io/v1alpha1
+metadata:
+  name: servas-app
+spec: 
+  repo: https://github.com/Balanc3/servas-helm-fleet
+  paths: 
+    - charts/
+  

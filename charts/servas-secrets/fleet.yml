@@ -1,0 +1,4 @@
+defaultNamespace: servas-app
+helm:
+  releaseName: servas-secrets
+

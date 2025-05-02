@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-servas-1
+  namespace: default
+spec:
+  containers:
+    - env:
+        - name: APP_NAME
+          value: Servas
+        - name: APP_ENV
+          value: Production
+        - name: APP_KEY
+          value: aB3dE5FgH7iJ9kLmN1pQrStUvWxYz2X4
+        - name: APP_DEBUG
+          value: 'false'
+        - name: APP_URL
+          value: http://test-servas.localdev.me
+        - name: SERVAS_ENABLE_REGISTRATION
+          value: 'true'
+        - name: SERVAS_SHOW_APP_VERSION
+          value: 'true'
+        - name: DB_CONNECTION
+          value: sqlite
+        - name: DB_DATABASE
+          value: /app/database/database.sqlite
+        - name: DB_FOREIGN_KEYS
+          value: 'true'
+      image: beromir/servas
+      imagePullPolicy: IfNotPresent
+      name: test-servas-1
+      ports:
+        - containerPort: 80
+          hostPort: 8080
+          name: tservas-prt
+          protocol: TCP
+      resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always

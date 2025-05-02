@@ -1,0 +1,7 @@
+
+apiVersion: v2
+namespace: servas-app
+name: servas-secrets
+description: servas secrets used for app and maria DB
+version: 0.0.0
+appVersion: 0.0.0

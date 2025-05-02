@@ -1,0 +1,56 @@
+# This file and all contents in it are OPTIONAL.
+
+# The namespace this chart will be installed to,
+# if not specified the chart will be installed to "default"
+## @param namespace [default: servas-app]The namespace this chart will be installed to, if not specified the chart will be installed to "default"
+namespace: servas-app
+## @param replicaCount [default: 1] Define amount of replica pods
+replicaCount: 1
+## @section image configuration
+#  This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
+image:
+  ## @param image.repository [default: docker.io/beromir/servas] location of docker image repository 
+  repository: docker.io/beromir/servas
+  ## @param image.pullPolicy [default: IfNotPresent] This sets the pull policy for images.
+  pullPolicy: IfNotPresent
+  ## @param image.tag Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+
+## @section service
+# configure settings for the kubernetes service
+service:
+  ## @param service.type [default: ClusterIp] set the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+  type: ClusterIp
+  ## @param service.port [default: 80] set the exports port of the service information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
+  port: 80
+
+# configure ingress, WARNING TLS is not currently working
+ingress:
+  ## @param ingress.enabled [default: true] enables the ingress for the service information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
+  enabled: true
+  ## @param ingress.className [default: traefik ] class of ingress. This fleet package install traefik by default, change if you have different ingress controller
+  className: "traefik"
+
+
+## @section Servas Env Variables
+Servas:
+  ## @param Servas.appName [default: servas-app] configures name of servas instance
+  appName: servas-app
+  ## @param Servas.appEnv [default: Production] configures name of environment of instance
+  appEnv: Production
+  ## @param Servas.appDebug [default: false] enables or disabled debug logging
+  appDebug: false
+  ## @param Servas.appURL [default: http://test-servas.localdev.me] url of servas instance. 
+  appURL: http://test-servas.localdev.me
+  ## @param Servas.appRegistration [default: true] Whether to allow app registration through UI
+  appRegistration: true
+  ## @param Servas.showVersion [default: true] shows Version of instance
+  showVersion: true
+  ## @param Servas.dbUserName [default: mdb_User] user name for MariaDB, passwords for this user and root user are in secret and auto configured. 
+  dbUserName: mdb_User
+  ## @param Servas.dbName [default: sservasDB] name of maria DB
+  dbName: servasDB
+  ## @param Servas.secretName [default: servas-keys] Secret can and does get created from another chart but if you want to create a secret the keys are: app-key (APP_KEY), mdbUser (MARIADB_PASSWORD), and mdbRoot (MARIADB_ROOT_PASSWORD)
+  secretName: servas-keys
+

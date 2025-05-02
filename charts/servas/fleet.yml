@@ -1,0 +1,6 @@
+defaultNamespace: servas-app
+helm:
+  releaseName: servas-app
+  chart: ""
+dependsOn: 
+  -name: servas-maria-db

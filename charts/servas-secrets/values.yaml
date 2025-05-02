@@ -1,0 +1,15 @@
+# This file and all contents in it are OPTIONAL.
+
+# The namespace this chart will be installed to,
+# if not specified the chart will be installed to "default"
+
+## @section secrets-config
+## @param namespace [default: servas-app]The namespace this secret will be installed to
+namespace: servas-app
+
+## @param secret-name [default: servas-keys] will change the name of the secret. NOTE: will ahve to change value down stream
+#  This chart will install secrets on start up
+secretName: servas-keys
+
+
+  
