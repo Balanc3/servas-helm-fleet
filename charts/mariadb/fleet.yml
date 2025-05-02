@@ -4,4 +4,4 @@ helm:
   chart: bitnami/mariadb
   repo: oci://registry-1.docker.io/bitnamicharts/mariadb-20.5.3.tgz
 dependsOn:
-  name: servas-secrets
+  - name: servas-secrets

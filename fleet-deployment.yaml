@@ -5,6 +5,7 @@ metadata:
   name: servas-app
 spec: 
   repo: https://github.com/Balanc3/servas-helm-fleet
+  branch: main
   paths: 
     - charts/
   
