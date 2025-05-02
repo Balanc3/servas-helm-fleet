@@ -3,6 +3,7 @@ helm:
   releaseName: traefik
   chart: traefik
   repo: oci://ghcr.io/traefik/helm/traefik
+  version: 35.2.0
 targetCustomizations: 
   - name: hasIngressController
     doNotDeploy: true
